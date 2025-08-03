@@ -1,0 +1,75 @@
+<script>
+/*    let a=prompt("Enter a number")
+    if(a%2==0){
+        alert('number is even')
+    }else{
+        alert('number is odd')
+    } */
+    
+    let name='karthik';
+    name[0]='a';
+    name[1]='b';
+    console.log(name);
+
+    let nums=[1,2,3,4]
+    nums[0]=10;
+    nums[1]=20;
+
+    console.log(10==10);
+    console.log([10]==[10]);
+
+    var a=20;
+    var a=10;
+
+    const b=10;
+
+    
+    let x=10;
+    console.log('Global',x);
+    function test(){
+        let x=100;
+        console.log('Local',x)
+        if(true){
+            let x=1000;
+            console.log('Block',x)
+        }
+    }
+    test();
+
+    console.log('Global code starts here...')
+    function f2() {
+        console.log('f2 starts...')
+        console.log('f2 ends...')
+    }
+    function f1() {
+        console.log('f1 starts...')
+        f2()
+        console.log('f1 ends...')
+    }
+    f1();
+    console.log('Global code ends here...')
+
+    var a = 10;
+    console.log(a);
+
+    var a = 20;
+    console.log(a);
+
+    // let a = 20;
+    // console.log(a); // Identifier 'a' has already been declared
+    let y  = 10;
+    console.log('Global',y);
+    function test(){
+        let y = 100;
+        console.log('function',y);
+        if(true){
+            let y = 1000;
+            console.log('block',y)
+        }
+    }
+    test();
+    
+
+
+
+</script>
