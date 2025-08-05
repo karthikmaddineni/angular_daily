@@ -1,0 +1,155 @@
+<script>
+    let name = "karthik";
+
+    console.log(name.split("").reverse().join(""));
+
+    name1 = "this is an javascript class";
+    console.log('Answer 1');
+    console.log(name1.split(" ").reverse().join(" "));
+
+  //   . WAP to print the first non-repeated character in a string
+  //    input:- 'entertainment'
+  //    output:- r
+    name2 = "entertainment";
+    for (char of name2) {
+        if (name2.indexOf(char) == name2.lastIndexOf(char)) {
+            console.log('Answer 2');
+            console.log(char);
+        break;
+        }
+    }
+
+  //4. WAP to print a string in title case
+  // 	input:- 'this is javascript class'
+  //    output:- 'This Is Javascript Class'
+
+    function toTtileCase(str) {
+        let result = "";
+        let words = str.split(" ");
+
+        for (let i = 0; i < words.length; i++) {
+            let word = words[i];
+
+            let titleWord = word[0].toUpperCase() + word.slice(1).toLowerCase();
+            result += titleWord + " ";
+        }
+        return result;
+    }
+
+    let input = "this is javascript class";
+    let output1 = toTtileCase(input);
+    console.log('Answer 3');
+    console.log("title case:" + output1);
+
+    // WAP to find longest word in a sentence
+    // 	input:- 'this is javascript class'
+    //     output:- javascript
+
+    function longest(str) {
+        let maxi = 0;
+        let result5 = "";
+        let words = str.split(" ");
+
+        for (let i in words) {
+        let temp = words[i].length;
+        if (temp > maxi) {
+            maxi = temp;
+            result5 = words[i];
+        }
+        }
+
+        return result5;
+    }
+
+    let s5 = "this is javascript class";
+    let output5 = longest(s5);
+    console.log('Answer 4');
+    console.log(output5);
+    //     6. WAP to print Account number
+    //    input:- '12345678987'
+    //    output:- '12*******87'
+
+    function account(str) {
+        let l = str.length;
+        let result = str.slice(0, 2) + "*".repeat(l - 4) + str.slice(l - 2);
+        return result;
+    }
+
+    let input6 = "8008582694";
+    let output6 = account(input6);
+    console.log('Answer 5');
+    console.log(output6);
+
+    //  WAP to print Credit-card number
+    //    input:- '1111222233334444'
+    //    output:- '1111-2222-3333-4444'
+
+    function creditcard(str) {
+        let l = str.length;
+        result = "";
+
+        for (let i = 0; i < l; i++) {
+            result += str.charAt(i);
+            if ((i + 1) % 4 === 0 && i !== str.length - 1) {
+                result += "-";
+            }
+        }
+
+        return result;
+    }
+    let input7 = "1111222233334444";
+    let output = creditcard(input7);
+    console.log('Answer 6');
+    console.log(output);
+
+    // WAP to check if 2 strings are anagram or not
+    // 	'listen' - 'silent'    anagram(every char of str1 should be there in str2)
+
+    function anagram(str1, str2) {
+        if (str1.length != str2.length) {
+            return 'not an anagram';
+        }
+
+        let s1 = str1.split("").sort().join("");
+        let s2 = str2.split("").sort().join("");
+
+        return s1 == s2;
+    }
+    let input8Str1 = "listen";
+    let input8Str2 = "silent";
+    let output8 = anagram(input8Str1, input8Str2);
+    console.log('Answer 7');
+    console.log(output8);
+
+    //    WAP to remove special character from a string
+    //    input:- 'hello@#hi&'
+    //    output:- 'hellohi'
+
+    function removeSpecailChar(str) {
+        return str.replace(/[^a-zA-Z0-9]/g, "");
+    }
+    let input9 = "hello@#hi&";
+    let output9 = removeSpecailChar(input9);
+    console.log('Answer 8');
+    console.log(output9);
+
+    function moveSpecialCharsToEnd(input) {
+        let normalChars = "";
+        let specialChars = "";
+
+        for (let ch of input) {
+            if (/[a-zA-Z0-9]/.test(ch)) {
+                normalChars += ch;
+            } else {
+                specialChars += ch;
+            }
+            }
+
+        return normalChars + specialChars;
+    }
+    let input10 = "hello@#hi&";
+    let output10 = moveSpecialCharsToEnd(input);
+    console.log('Answer 9');
+    console.log("Output:", output10);
+    console.log('Answer 10');
+    </script>
