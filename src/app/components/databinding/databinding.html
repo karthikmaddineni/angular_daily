@@ -1,0 +1,42 @@
+<p>databinding works!</p>
+<h3 class="text-center">lets learn databinding</h3>
+<hr/>
+<div class="border border-3 rounded-3 p-2 m-2">
+    <div>
+        My Name is {{myName}}
+        <!-- the above is interpolation data binding -->
+    </div>
+    <div>
+        My Name is <span [innerText]="myName"></span><br>
+        My Name is <span bind-innerText="myName"></span>
+        <!-- the above is property binding -->
+    </div>
+    <div>
+        <img src="{{img_url}}" alt="">
+        <img [src]='img_url' alt="">
+        <img bind-src='img_url' alt="">
+    </div>
+    <div>
+        <input value="{{myName}}">
+        <input [value]='myName'>
+        <input bind-value='myName'>
+    </div>
+    <div>
+        Interpolation VS propertyBinding
+        <!-- here interpolation doesn't work with the bool values --><br>
+        <button class="btn btn-primary">ADD TO CART</button>
+        <button class="btn btn-primary" disabled = {{flag}}>ADD TO CART</button>
+        <button class="btn btn-primary" [disabled] =flag>ADD TO CART</button>
+        <button class="btn btn-primary" bind-disabled = flag>ADD TO CART</button>
+    </div>
+    <div>
+        Event binding
+        <button class="btn btn-primary" (click)="addToCart()">ADD TO CART</button>
+        <button class="btn btn-primary" on-click="addToCart()">ADD TO CART</button>
+    </div>
+    <div>
+        Two way binding
+        <!-- here we use ngModel -->
+        <input [(ngModel)]="myName" class="mx-2"/>
+    </div>
+</div>
