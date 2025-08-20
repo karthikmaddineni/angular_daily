@@ -1,0 +1,80 @@
+<!-- <p>directives works!</p> -->
+<!-- these will allow the enhance the power of HTML elements
+    extend the functionality of elements and also Add the additional behaviour
+    before we used to write *ngif, *ngSwitchCase, *ngFor
+    now we use @if,@else,@switch,@case,@default,@for,@empty@let-->
+<!-- @if (isLoggedIn) {
+    <h2> Hello {{user.name}}</h2>
+}@else{
+    <h2>please login to your account</h2>
+}
+@switch (user.role) {
+    @case ('admin') {
+        <p>You have full access</p>
+    }
+    @case ('editor') {
+        <p>You can edit content</p>
+    }
+    @default {
+        <p>Access Denied</p>
+    }
+} -->
+<!-- <h3>Tasks to do:</h3> -->
+<!-- @for (Tasks of user.tasks; track Tasks.id) {
+    <li>{{Tasks.task}}</li>
+} -->
+<button (click)="toggleButton = !toggleButton">
+{{ toggleButton ? 'TABLE' : 'CARDS' }}
+</button>
+
+@if (toggleButton) {
+<div>    
+    <h2>Employee Card</h2>
+    @for (emp of employees; track emp.id) {
+        <div class="card" style="width: 18rem;" display="flex" flex-wrap="wrap">
+            <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{emp.id}}</li>
+                    <li class="list-group-item">{{emp.name}}</li>
+                    <li class="list-group-item">{{emp.role}}</li>
+                    <li class="list-group-item">{{emp.salary}}</li>
+                    <li class="list-group-item">{{emp.status}}</li>
+            </ul>
+        </div>
+    }
+</div>
+}@else {
+    <h2>Employee Table</h2>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Salary</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @for (emp of employees; track emp.id) {
+        <tr
+        [ngClass]="{inactive: emp.status === 'Inactive',manager: emp.role === 'Manager'}"
+        [ngStyle]="{'background-color': roleColors[emp.role] || 'white'}">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.role }}</td>
+        <!-- (a) salary text color via ngStyle + (e) badge with dynamic bg -->
+        <td [ngStyle]="{ color: emp.salary > 50000 ? 'green' : 'red' }">
+            <span class="badge" [ngClass]="salaryBadgeClass(emp.salary)">
+            {{ emp.salary | number:'1.0-0' }}
+            </span>
+        </td>
+        <td>{{ emp.status }}</td>
+        </tr>
+    }
+    </tbody>
+</table>
+</div>
+}

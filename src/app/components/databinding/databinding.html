@@ -39,4 +39,20 @@
         <!-- here we use ngModel -->
         <input [(ngModel)]="myName" class="mx-2"/>
     </div>
+    <div>
+        Addition using 2 way binding
+        <input type="number" [(ngModel)]="num1"/>
+        <input type="number" [(ngModel)]="num2"/>
+        <p>Addition is :: {{num1 + num2}}</p>
+    </div>
+    <!-- in 2 way data-binding we use state variable so when ever we change it always get rerender
+    so to over come this we use the template ref variable-->
+    <input type="number" #num3/>
+    <div>
+        Addition using 2 way template reference
+        <input type="number" #num3/>
+        <input type="number" ref-num4/>
+        <button class ="btn btn-primary" (click)="addition(num3.value,num4.value)"> ADD </button>
+        <p>Addition is :: {{addResult}}</p>
+    </div>
 </div>
