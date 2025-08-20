@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './directives.html',
-  styleUrls: ['./directives.css']   // ✅ plural
+  styleUrls: ['./directives.css']   
 })
 export class Directives {
   
@@ -19,15 +19,13 @@ export class Directives {
     { id: 4, name: 'Eve',   role: 'HR',        salary: 40000, status: 'Active'   }
   ];
 
-  // (d) role → row background color
   roleColors: Record<string, string> = {
     Manager:   'lightyellow',
     Developer: 'lightblue',
     Tester:    'lightpink'
-    // others default to white
   };
 
-  // (e) badge background based on salary brackets
+
   salaryBadgeClass(salary: number) {
     if (salary > 70000) return ['bg-success'];                  // green
     if (salary >= 40000) return ['bg-warning', 'text-dark'];    // orange with dark text for contrast

@@ -65,7 +65,6 @@
         <td>{{ emp.id }}</td>
         <td>{{ emp.name }}</td>
         <td>{{ emp.role }}</td>
-        <!-- (a) salary text color via ngStyle + (e) badge with dynamic bg -->
         <td [ngStyle]="{ color: emp.salary > 50000 ? 'green' : 'red' }">
             <span class="badge" [ngClass]="salaryBadgeClass(emp.salary)">
             {{ emp.salary | number:'1.0-0' }}
