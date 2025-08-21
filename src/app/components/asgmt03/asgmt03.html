@@ -1,0 +1,53 @@
+<p>asgmt03 works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (emp of employees; track emp.id) {
+        <tr>
+            <th scope="row">{{emp.id}}</th>
+            <td>{{emp.name}}</td>
+            <td>{{emp.role}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.status}}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteEmp(emp.id)">delete</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<button class="btn btn-primary"
+        (click)="AddNew = ! AddNew">Add Employee</button>
+@if (AddNew) {
+<div class="row">
+    <form (ngSubmit)="addEmployee(empForm)" #empForm="ngForm">
+    <div class="col">
+        <input type="number" name="id" [(ngModel)]="newEmployee.id" class="form-control" placeholder="Emo Id" >
+    </div>
+    <div class="col">
+        <input type="text" name="name" [(ngModel)]="newEmployee.name" class="form-control" placeholder="name" >
+    </div>
+    <div class="col">
+        <input type="text" name="role" [(ngModel)]="newEmployee.role" class="form-control" placeholder="role" >
+    </div>
+    <div class="col">
+        <input type="number" name="salary" [(ngModel)]="newEmployee.salary" class="form-control" placeholder="salary" >
+    </div>
+    <div class="col">
+        <select [(ngModel)]="newEmployee.status" name="status" class="form-control" placeholder="status" >
+            <option>Active</option>
+            <option>inactive</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">SUBMIT</button>
+    </form>
+</div>
+}
