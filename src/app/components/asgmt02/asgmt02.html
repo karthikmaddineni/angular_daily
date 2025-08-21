@@ -1,0 +1,56 @@
+<!-- <p>asgmt02 works!</p> -->
+<input type="search" 
+        placeholder="Search item name" 
+        [(ngModel)]="searchProd" 
+        (ngModelChange)="Search($event)" 
+        class="search"/>
+
+@if (searchProducts.length > 0) {
+  <div class="summary">
+    Showing
+    {{ (currentPage - 1) * pageSize + 1 }}
+    –
+    {{ Math.min(currentPage * pageSize, searchProducts.length) }}
+    of
+    {{ searchProducts.length }}
+    results
+  </div>
+} @else {
+  <div class="summary">No results.</div>
+}
+<h2>List of Products using Cards</h2>
+<div class="container py-3">
+<div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 g-3">
+    @for (product of pagedProducts; track product.id) {
+        <div class="col">
+            <div class="card h-100" style="width: 18rem;" display="flex-wrap">
+                <img src={{product.image}} width="150px" height="250px"  class="card-img-top" alt="product img">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <p class="card-text">product id :{{product.id}}</p>
+                    <p class="card-subtitle mb-2 text-body-secondary">{{product.category}}</p>
+                    <p class="card-text mb-2" [class.clamp-2]="!expanded.has(product.id)">
+                    {{ product.description }}</p>
+                    <p> @if (product.description.length > 120) {
+                        <a class="link-primary small mb-2"
+                        role="button"
+                        (click)="toggle(product.id)">
+                        {{ expanded.has(product.id) ? 'Read less' : 'Read more' }}</a>
+                    }
+                    </p>
+                    <p class="card-text">${{product.price}}</p>
+                    <p class="card-text">Rating :{{product.rating.rate}}</p>
+                    <p class="card-text">Items left :{{product.rating.count}}</p>
+                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+</div>
+
+<div class="pagination justify-content-center">
+    <button (click)="prevPage()">Prev</button>
+    <span>Page {{currentPage}} of {{totalPages}}</span>
+    <button (click)="nextPage()">Next</button>
+</div>

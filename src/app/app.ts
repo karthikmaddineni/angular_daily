@@ -10,19 +10,21 @@ import { Footer } from './components/footer/footer';
 // import { TempReference } from "./components/temp-reference/temp-reference";
 import { CommonModule } from '@angular/common';
 import { Directives } from './components/directives/directives';
+import { Asgmt02 } from './components/asgmt02/asgmt02';
 
 @Component({
   selector: 'app-root',
   imports: [
     CommonModule,
     Navbar, 
-    Categories, 
+    Categories,
+    Asgmt02,
     // Carousel,
     // TempReference, 
     // Products, 
     Body, 
     Footer, 
-    Directives
+    //Directives
     // Databinding,
     ],
   templateUrl: './app.html',
