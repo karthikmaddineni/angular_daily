@@ -11,14 +11,15 @@ import { Footer } from './components/footer/footer';
 import { CommonModule } from '@angular/common';
 import { Directives } from './components/directives/directives';
 import { Asgmt02 } from './components/asgmt02/asgmt02';
-
+import { Asgmt03 } from './components/asgmt03/asgmt03';
 @Component({
   selector: 'app-root',
   imports: [
     CommonModule,
     Navbar, 
     Categories,
-    Asgmt02,
+    Asgmt03,
+    // Asgmt02,
     // Carousel,
     // TempReference, 
     // Products, 
