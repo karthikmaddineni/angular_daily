@@ -9,16 +9,18 @@ import { Footer } from './components/footer/footer';
 // import { Databinding } from "./components/databinding/databinding";
 // import { TempReference } from "./components/temp-reference/temp-reference";
 import { CommonModule } from '@angular/common';
-import { Directives } from './components/directives/directives';
-import { Asgmt02 } from './components/asgmt02/asgmt02';
-import { Asgmt03 } from './components/asgmt03/asgmt03';
+// import { Directives } from './components/directives/directives';
+// import { Asgmt02 } from './components/asgmt02/asgmt02';
+// import { Asgmt03 } from './components/asgmt03/asgmt03';
+import { Asgmt04 } from './components/asgmt04/asgmt04';
 @Component({
   selector: 'app-root',
   imports: [
     CommonModule,
     Navbar, 
     Categories,
-    Asgmt03,
+    Asgmt04,
+    //Asgmt03,
     // Asgmt02,
     // Carousel,
     // TempReference, 

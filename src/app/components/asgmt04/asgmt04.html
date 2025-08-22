@@ -1,0 +1,48 @@
+<p>asgmt04 works!</p>
+<h2 class="container mt-4">Working with pipes</h2>
+<div class="card-body">
+    <ul class="list-group">
+    <p class="fw-bold ">{{21 | ordinal}}</p>
+    <p class="fw-bold ">{{22 | ordinal}}</p>
+    <p class="fw-bold ">{{23 | ordinal}}</p>
+    <p class="fw-bold ">{{24 | ordinal}}</p>
+    <p class="fw-bold ">{{25 |ordinal}}</p>
+    <p class="fw-bold ">{{111 |ordinal}}</p>
+    <p class="fw-bold ">{{21 | roman}}</p>
+    <p class="fw-bold ">{{22 | roman}}</p>
+    <p class="fw-bold ">{{23 | roman}}</p>
+    <p class="fw-bold ">{{24 | roman}}</p>
+    <p class="fw-bold ">{{25 |ordinal}}</p>
+    <p class="fw-bold ">{{111 |roman}}</p>
+    </ul>
+</div>
+<div class="container my-4">
+    <div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            Age Calculator
+        </div>
+
+        <div class="card-body">
+            <label for="dob" class="form-label">Date of Birth</label>
+            <div class="input-group">
+            <span class="input-group-text">DOB</span>
+            <input id="dob" type="date" class="form-control" #dob>
+        </div>
+
+            @if (dob.value) {
+            @let result = (dob.value | age);
+            <div class="alert alert-success mt-3">
+                Age: <strong>{{ result }}</strong>
+            </div>
+        }
+        </div>
+        <div class="card-footer text-end">
+            <small class="text-muted">Uses Angular Enter a date to see the age instantly.</small>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
