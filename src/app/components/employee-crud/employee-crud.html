@@ -1,0 +1,5 @@
+<p>employee-crud works!</p>
+<!-- employee-crud.html -->
+<!-- <app-employee-add (add)="onAdd($event)"></app-employee-add> -->
+<app-employee-table [data]="employees"
+                    (deleteEmployee)="onDelete($event)"></app-employee-table>

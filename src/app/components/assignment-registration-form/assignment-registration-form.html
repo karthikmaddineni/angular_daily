@@ -1,0 +1,95 @@
+<h2>assignment-registration-form works!</h2>
+<div class="border border-3 rounded-3 p-3 col-sm-6 offset-3">
+    
+    <form #myForm="ngForm" (submit)="submitMyForm(myForm.value)">
+    <p>
+        First Name<sup>*</sup>:
+        <input name="firstName" #fName="ngModel" [(ngModel)]="user.firstName" required minlength="5" />
+        @if(fName.dirty && fName.hasError('required')){
+            <span class="text-danger">FirstName is Required</span>
+        }
+        @if(fName.dirty && fName.hasError('minlength')){
+            <span class="text-danger">FirstName Should have minimum 5 chars</span>
+        }
+    </p>
+    <p>
+        Last Name<sup>*</sup>:
+        <input name="lastName" #lName="ngModel" ngModel [(ngModel)]="user.lastName" required minlength="5"/>
+        @if(lName.dirty && lName.hasError('required')){
+            <span class="text-danger">LastName is Required</span>
+        }
+        @if(lName.dirty && lName.hasError('minlength')){
+            <span class="text-danger">LastName Should have minimum 5 chars</span>
+        }
+    </p>
+    <p>
+        Email<sup>*</sup>:
+        <input name="email" #eMail="ngModel" ngModel [(ngModel)]="user.email" required/>
+        @if(eMail.dirty && eMail.hasError('required')){
+            <span class="text-danger">Email is Required</span>
+        }
+        @if(eMail.dirty && eMail.hasError('email')){
+            <span class="text-danger">Enter a valid Email</span>
+        }
+    </p>
+    <div ngModelGroup="address">
+        <p>
+        City:
+        <input name="city"  #City="ngModel"  [(ngModel)]="user.address.city" />
+        @if(City.dirty && City.hasError('required')){
+            <span class="text-danger">City is Required</span>
+        }
+    </p>
+    <p>
+        State:
+        <input name="state" #State="ngModel" ngModel [(ngModel)]="user.address.state" />
+        @if(State.dirty && State.hasError('required')){
+            <span class="text-danger">State is Required</span>
+        }
+    </p>
+    <p>
+        Country:
+        <input name="Country" #country="ngModel" ngModel [(ngModel)]="user.address.country"/>
+        @if(country.dirty && country.hasError('required')){
+            <span class="text-danger">Country is Required</span>
+        }
+    </p>
+    <p>
+        Pincode:
+        <input name="pincode" ngModel [(ngModel)]="user.address.pincode" required/>
+        @if(State.dirty && State.hasError('required')){
+            <span class="text-danger">State is Required</span>
+        }
+    </p>
+    <p>
+        Gender<sup>*</sup>:
+        <input type="radio" name="gender" value="male"   [(ngModel)]="user.gender" required>MALE
+        <input type="radio" name="gender" value="female" [(ngModel)]="user.gender" required>FEMALE
+        <input type="radio" name="gender" value="others" [(ngModel)]="user.gender" required>OTHERS
+    </p>
+    <p>
+        Skills<sup>*</sup>:
+        <input type="checkbox" name="html" [(ngModel)]="user.skills.html" required>HTML
+        <input type="checkbox" name="css" [(ngModel)]="user.skills.css" required>CSS
+        <input type="checkbox" name="Angular" [(ngModel)]="user.skills.Angular" required>Angular
+    </p>
+    <p>
+        Bio:
+        <input name="Bio" #bio="ngModel" ngModel [(ngModel)]="user.bio"/>
+        @if(bio.dirty && bio.hasError('required')){
+            <span class="text-danger">Bio is Required</span>
+        }
+    </p>
+    
+    </div>
+
+    <input type="reset" value="Reset" class="mx-2" />
+    <input type="submit" value="Submit" [disabled]="myForm.invalid" />
+    </form>
+</div>
+<!-- <pre>
+    {{myForm.value | json}}
+</pre>
+<pre>
+    {{user | json}}
+</pre> -->

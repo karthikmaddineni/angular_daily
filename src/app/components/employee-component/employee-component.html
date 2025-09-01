@@ -1,0 +1,31 @@
+<div class="container" style="max-width: 900px; margin: 24px auto;">
+    <h2>Employees Table</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (e of employees; track e.eId) {
+                <tr>
+                    <td>{{e.eId}}</td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.email}}</td>
+                    <td>{{e.gender}}</td>
+                    <td>{{e.sal}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <label for="filter">FILTER</label>
+    <select [(ngModel)]="empType" (click)="getEmp(empType)">
+        <option value="all">ALL</option>
+        <option value="male">MALE</option>
+        <option value="female">FEMALE</option>
+    </select>
+</div>

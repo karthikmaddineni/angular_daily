@@ -1,0 +1,11 @@
+<p>employee-add works!</p>
+<form (ngSubmit)="submit()" #f="ngForm" class="p-2 border rounded">
+<input class="form-control mb-2" name="name"  [(ngModel)]="model.name"  placeholder="Name"  required>
+<input class="form-control mb-2" name="role"  [(ngModel)]="model.role"  placeholder="Role"  required>
+<input class="form-control mb-2" name="salary" type="number" [(ngModel)]="model.salary" placeholder="Salary" min="0">
+<select class="form-select mb-2" name="status" [(ngModel)]="model.status">
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+</select>
+<button class="btn btn-primary" type="submit">Add</button>
+</form>

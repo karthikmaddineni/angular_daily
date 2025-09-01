@@ -12,24 +12,35 @@ import { CommonModule } from '@angular/common';
 // import { Directives } from './components/directives/directives';
 // import { Asgmt02 } from './components/asgmt02/asgmt02';
 // import { Asgmt03 } from './components/asgmt03/asgmt03';
-import { Asgmt04 } from './components/asgmt04/asgmt04';
+// import { Asgmt04 } from './components/asgmt04/asgmt04';
+import { EmployeeAdd } from "./components/employee-add/employee-add";
+import { EmployeeCRUD } from "./components/employee-crud/employee-crud";
+import { EmployeeTable } from "./components/employee-table/employee-table";
+import { EmployeeComponent } from './components/employee-component/employee-component';
+import { Httpemployees } from './components/http-demo1/http-demo1';
+import { HTTPEMPASS01 } from './components/httpempass01/httpempass01';
+import { PipesDemo } from "./components/pipes-demo/pipes-demo";
+import { AssignmentRegistrationForm } from "./components/assignment-registration-form/assignment-registration-form";
+
 @Component({
   selector: 'app-root',
   imports: [
     CommonModule,
-    Navbar, 
+    Navbar,
     Categories,
-    Asgmt04,
+    // AssignmentRegistrationForm,
+    // EmployeeComponent,
+    // Asgmt04,
     //Asgmt03,
     // Asgmt02,
     // Carousel,
     // TempReference, 
     // Products, 
-    Body, 
-    Footer, 
-    //Directives
-    // Databinding,
-    ],
+    // PipesDemo,
+    // Body,
+    Footer,
+    AssignmentRegistrationForm
+],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,40 @@
+<p>pipes-demo works!</p>
+<h3 class="tetxt-center">Lets learn angular pipes</h3>
+<div class="border border-3 rounded-3 p-2 m-2">
+    <!-- common module needed to be imported to use the pipes -->
+    <div>Name without pipe : {{ myName }}</div>
+    <div>Name with uppercase pipe : {{ myName | uppercase}}</div>
+    <div>Name with lowercase pipe : {{ myName | lowercase}}</div>
+    <div>Name with titlecase pipe : {{ myName | titlecase}}</div>
+    <div>{{mySalary | currency}}</div>
+    <div>{{mySalary | currency : 'INR'}}</div>
+    <div>{{mySalary | currency : 'INR' : 'code'}}</div>
+    <div>{{mySalary | currency : 'INR' : 'symbol'}}</div>
+    <div>{{today}}</div>
+    <div>{{today | date}}</div>
+    <!-- custom formatting -->
+    <div>{{today | date:'dd/MM/yyyy'}}</div>
+    <!-- MM-08,M-8,MMM-AUG,MMMM-August -->
+    <!-- shortDate,mediumDate,longDate,fullDate,shortTime,longTime,fullTime -->
+    <!--      input | pipename | Argument -->
+    <!-- <div>Name with currency pipe : {{ myName | currency}}</div> -->
+    <!-- pipe chaining, here we are passing output of one pipe is being passed to other pipe -->
+<div>{{today | date :'dd/MMMM/yyyy'|lowercase}}</div>
+<div>{{mySalary | number}}</div>
+<!-- when we use object,object we use the json.stringify -->
+<div>{{user | json}}</div>
+<!-- key-value pipe, it is used to itterate the objects -->
+@for (item of user | keyvalue; track $index) {
+    <h5>{{item.key}}---{{item.value}}</h5>
+}
+
+<div>{{arr}}</div>
+<div>{{arr | slice : 2}}</div>
+<!-- <div>{{arr | slice : 1 : 2}}</div> -->
+<div>normal observable:{{num}}</div>
+<div>subscribing observable ::{{num | async}}</div>
+<h1>Custom Pipes</h1>
+<textarea name="" id="" maxlength="100" [(ngModel)]="msg"></textarea>
+<!-- <div>{{msg}}</div> -->
+<div>{{msg | remaining}}</div>
+</div>

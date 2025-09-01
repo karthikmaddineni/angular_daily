@@ -1,0 +1,11 @@
+textarea{
+    display: block;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 2px;
+}
+label{
+    display: block;
+
+}
