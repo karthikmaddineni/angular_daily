@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_plus-055f80.svg" alt="">
+      <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,19 +10,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" routerLink="home" routerLinkActive="active">home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">AboutUs</a>
+          <a class="nav-link active" routerLink="productlaunch" routerLinkActive="active">productlaunch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Careers</a>
+          <a class="nav-link active" routerLink="careers" routerLinkActive="active">carrers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">ContactUs</a>
+          <a class="nav-link active" routerLink="contactus" routerLinkActive="active">contactus</a>
         </li>
 
       </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
   </div>
 </nav>
+<div>
+  <h1>
+  Nav Bar works here
+    </h1>
+</div>

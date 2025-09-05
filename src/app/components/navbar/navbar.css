@@ -1,0 +1,6 @@
+.active{
+    background-color: red;
+    border-radius: 10px;
+    transform: scaleX(20px);
+    transform-origin: 20px;
+}

@@ -1,5 +1,10 @@
 <p>pipes-demo works!</p>
 <h3 class="tetxt-center">Lets learn angular pipes</h3>
+<div>
+    @for(i of arrr | mysort; track $index){
+        <!-- <span>{{i | mysort }}</span> -->
+    }
+</div>
 <div class="border border-3 rounded-3 p-2 m-2">
     <!-- common module needed to be imported to use the pipes -->
     <div>Name without pipe : {{ myName }}</div>
@@ -38,3 +43,4 @@
 <!-- <div>{{msg}}</div> -->
 <div>{{msg | remaining}}</div>
 </div>
+

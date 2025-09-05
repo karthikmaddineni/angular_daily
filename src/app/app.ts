@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
-import { Navbar } from './components/navbar/navbar';
+//import { Navbar } from './components/navbar/navbar';
 // import { Carousel } from './components/carousel/carousel';
 import { Categories } from './components/categories/categories';
 import { Body } from './components/body/body';
@@ -21,13 +21,14 @@ import { Httpemployees } from './components/http-demo1/http-demo1';
 import { HTTPEMPASS01 } from './components/httpempass01/httpempass01';
 import { PipesDemo } from "./components/pipes-demo/pipes-demo";
 import { AssignmentRegistrationForm } from "./components/assignment-registration-form/assignment-registration-form";
+import { Navbar } from "./components/navbar/navbar";
 
 @Component({
   selector: 'app-root',
   imports: [
     CommonModule,
-    Navbar,
     Categories,
+    Navbar,
     // AssignmentRegistrationForm,
     // EmployeeComponent,
     // Asgmt04,
@@ -36,10 +37,10 @@ import { AssignmentRegistrationForm } from "./components/assignment-registration
     // Carousel,
     // TempReference, 
     // Products, 
-    // PipesDemo,
+    //PipesDemo,
     // Body,
     Footer,
-    AssignmentRegistrationForm
+    Navbar
 ],
   templateUrl: './app.html',
   styleUrl: './app.css'

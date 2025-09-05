@@ -35,6 +35,7 @@ export class AssignmentRegistrationForm {
   };
 
   lastSubmit:any=null;
+  
   submitMyForm(formDate: any) {
     console.log(formDate)
     this.lastSubmit=JSON.parse(JSON.stringify(formDate.value))
