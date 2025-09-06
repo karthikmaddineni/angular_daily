@@ -1,5 +1,6 @@
 <app-categories></app-categories>
 <app-navbar></app-navbar>
+<app-servdemo></app-servdemo>
 <!-- <app-carousel></app-carousel> -->
 <!-- <app-databinding></app-databinding> -->
 <!-- <app-temp-reference></app-temp-reference> -->
@@ -18,7 +19,9 @@
 <!-- <app-assignment-registration-form></app-assignment-registration-form> -->
 <!-- <app-body></app-body> -->
 <!-- <app-httpempass01></app-httpempass01> -->
+<app-httpdemooooo></app-httpdemooooo>
 <app-footer></app-footer>
+
 <!-- component lifecycle 
 each stage is called hook, total 8 lifecycles 
 so to use these hooks into our project,
@@ -31,11 +34,53 @@ and then we have to write the hook method functionality==>{
 ngOnChanges(){
 //logic
 }}
-
 1=>constructor(), no bussiness logic, 
-2=>ngOnChanges(),called whenever an @Input property gets changed, no-inputs no ngOnchanges, we can access previous and current values 
-3=>ngOnInit(),it runs for every component, when initialized called for only once, we write the time consuming logic here
-4=>ngDoCheck(),On every change in component Detection cycle, also lets us to implement the custom change detection logic, 
-usefull 
-5=>ngAfterContentInit(),called once after 
+2=>ngOnChanges(),it is called on Child comp. called whenever an @Input property gets changed, no-inputs no ngOnchanges, we can access previous and current values 
+    in the context of child and parent, when ever parent gets updated child ngOnChange will be called
+3=>ngOnInit(),it runs for every component for once only, when initialized called for only once, we write the time consuming logic here
+4=>ngDoCheck(),it is called on parent comp. On every change in component,... Detection cycle, also lets us to implement the custom change detection logic, 
+    usefull 
+    when ngDocheck is called ngAfterContentInit(),ngAfterContentChecked(),ngAfterViewInit(),ngAfterViewChecked()
+5=>ngAfterContentInit(), will be called only once after 1st called to ngDoCheck()
+6=>ngAfterContentChecked(), will be called when the ngDoCheck is called
+7=>ngAfterViewInit(),called when the view is initiliazed, best for DOM manipulation, 
+    doesn't work on the constructor level because at that time:component doesn't get initilized.
+8=>ngAfterViewChecked(),
+9=>ngOnDestroy(),
+| Hook                      | Called Once? | Called Multiple Times? | Trigger              |
+| ------------------------- | ------------ | ---------------------- | -------------------- |
+| **ngOnChanges**           | No           | ✅ Each `@Input` change | Parent input change  |
+| **ngOnInit**              | ✅ Once       | No                     | Component init       |
+| **ngDoCheck**             | No           | ✅ Every detection      | Any change detection |
+| **ngAfterContentInit**    | ✅ Once       | No                     | After content init   |
+| **ngAfterContentChecked** | No           | ✅ Every detection      | Content re-check     |
+| **ngAfterViewInit**       | ✅ Once       | No                     | After view init      |
+| **ngAfterViewChecked**    | No           | ✅ Every detection      | View re-check        |
+| **ngOnDestroy**           | ✅ Once       | No                     | Component destroy    |
+=========================
+Using angular services we can share the logic across the components, lazily inintaialzed, singleton =>logging, auth
+Here we use the HttpClient module to communicate the server
+================================
+HTTP-Methods
+GET->retrive data, visible in URL
+POST->send data, also to fetch data securely,not visible in URL 
+PUT->To update the existing record
+PATCH->update the part of the record
+DELETE->removes the record
+===========================
+Status Code::
+1**=>Information
+2**=>Success,.200->OK,201->Created,202->Accepetd,204->No Content
+3**=>Redirection
+4**=>Client Error,..400->BadRequest,401->Unauthorized,403->Forbidden,404->Not Found
+5**=>Server Error
+================================
+CREATING REST-API WITH JSON-SERVER::
+to do the API calls we can have our own json server running on local host.
+npm install -g json-server,. in cmd
+json-server --watch employees.json,.. in cmd
+=============================
+In app.config.ts we have to :: provideHttpClient(),.provideRouter(routes),  
+so this will enable the our project to access http methods.
+inject httpclinet into component
 -->

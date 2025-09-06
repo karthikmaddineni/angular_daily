@@ -22,6 +22,8 @@ import { HTTPEMPASS01 } from './components/httpempass01/httpempass01';
 import { PipesDemo } from "./components/pipes-demo/pipes-demo";
 import { AssignmentRegistrationForm } from "./components/assignment-registration-form/assignment-registration-form";
 import { Navbar } from "./components/navbar/navbar";
+import { Servdemo } from "./components/servdemo/servdemo";
+import { Httpdemooooo } from "./components/httpdemooooo/httpdemooooo";
 
 @Component({
   selector: 'app-root',
@@ -29,6 +31,7 @@ import { Navbar } from "./components/navbar/navbar";
     CommonModule,
     Categories,
     Navbar,
+    Servdemo,
     // AssignmentRegistrationForm,
     // EmployeeComponent,
     // Asgmt04,
@@ -40,7 +43,8 @@ import { Navbar } from "./components/navbar/navbar";
     //PipesDemo,
     // Body,
     Footer,
-    Navbar
+    Navbar,
+    Httpdemooooo
 ],
   templateUrl: './app.html',
   styleUrl: './app.css'
