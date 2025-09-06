@@ -21,5 +21,21 @@
 <app-footer></app-footer>
 <!-- component lifecycle 
 each stage is called hook, total 8 lifecycles 
+so to use these hooks into our project,
+they will automatically gets invoked when time comes,.. we cannot also change the order.
+constructor is also an life cycle => but its from java-script not from angular
+we have to import them, ==> import {onChanges} from '@angular/core'
+then we have to extend ==>class ChildComponent implements onChanges{}
+it in thr component,
+and then we have to write the hook method functionality==>{
+ngOnChanges(){
+//logic
+}}
 
+1=>constructor(), no bussiness logic, 
+2=>ngOnChanges(),called whenever an @Input property gets changed, no-inputs no ngOnchanges, we can access previous and current values 
+3=>ngOnInit(),it runs for every component, when initialized called for only once, we write the time consuming logic here
+4=>ngDoCheck(),On every change in component Detection cycle, also lets us to implement the custom change detection logic, 
+usefull 
+5=>ngAfterContentInit(),called once after 
 -->
